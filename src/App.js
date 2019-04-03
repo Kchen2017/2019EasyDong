@@ -1,99 +1,53 @@
 import React, {Component} from "react";
-import { TabBar, NavBar, Flex } from 'antd-mobile';
+import {BrowserRouter as Router, Route, Switch, Link, Redirect} from 'react-router-dom';
+import GoWhereCom from './components/goWhere/goWhereCom'
+import WithWhoCom from './components/withWho/withWhoCom'
+import PersonsCom from './components/persons/personsCom'
+import MyCom from './components/my/myCom'
+
+
 export default class App extends Component {
     constructor(props){
         super(props);
         this.state = {
-            selectedTab: 'blueTab'
+            selectedTab: 'go'
         }
     }
-    componentDidMount(){
-        console.log(this.props)
+
+    navClickFun(navFlag){
+        
+        this.setState({
+            selectedTab: navFlag
+        })
     }
 
-    renderContent(pageText) {
-        return (
-          <div style={{ backgroundColor: 'white', height: '100%', textAlign: 'center' }}>
-            <div style={{ paddingTop: 60 }}>Clicked “{pageText}” tab， show “{pageText}” information</div>
-          </div>
-        );
-      }
-    
     render(){
-        return <div>
-            woshiren
-        </div>
-        
-        
-        
-        
-        
-        
-        // <div style={{ position: 'fixed', height: '94%', width: '100%', top: 0 }}>
-        //     <NavBar
-        //     mode="light"
-        //     >Easy Dong</NavBar>
-        //     <div>hahah</div>
-        //     <TabBar
-        //         unselectedTintColor="#949494"
-        //         tintColor="#33A3F4"
-        //         barTintColor="white"
-        //         >
-        //         <TabBar.Item
-        //             title="go where"
-        //             key="go where"
-        //             icon={<span class="iconfont">&#xe60a;</span>}
-        //             selectedIcon={<span class="iconfont">&#xe60a;</span>}
-        //             selected={this.state.selectedTab === 'blueTab'}
-        //             onPress={() => {
-        //             this.setState({
-        //                 selectedTab: 'blueTab',
-        //             });
-        //             }}
-        //             data-seed="logId"
-        //         >
-        //         </TabBar.Item>
-        //         <TabBar.Item
-        //             icon={<span class="iconfont">&#xe646;</span>}
-        //             selectedIcon={<span class="iconfont">&#xe646;</span>}
-        //             title="with who"
-        //             key="with who"
-        //             selected={this.state.selectedTab === 'redTab'}
-        //             onPress={() => {
-        //             this.setState({
-        //                 selectedTab: 'redTab',
-        //             });
-        //             }}
-        //             data-seed="logId1"
-        //         >
-        //         </TabBar.Item>
-        //         <TabBar.Item
-        //             icon={<span class="iconfont">&#xe603;</span>}
-        //             selectedIcon={<span class="iconfont">&#xe603;</span>}
-        //             title="persons"
-        //             key="persons"
-        //             selected={this.state.selectedTab === 'greenTab'}
-        //             onPress={() => {
-        //             this.setState({
-        //                 selectedTab: 'greenTab',
-        //             });
-        //             }}
-        //         >
-        //         </TabBar.Item>
-        //         <TabBar.Item
-        //             icon={<span class="iconfont">&#xe658;</span>}
-        //             selectedIcon={<span class="iconfont">&#xe658;</span>}
-        //             title="my"
-        //             key="my"
-        //             selected={this.state.selectedTab === 'yellowTab'}
-        //             onPress={() => {
-        //             this.setState({
-        //                 selectedTab: 'yellowTab',
-        //             });
-        //             }}
-        //         >
-        //         </TabBar.Item>
-        //     </TabBar>
-        // </div>
+        return <Router>
+            <div class="mui-content" style={{height: "100%"}}> 
+                    {/* <Redirect push to="/goWhere" /> */}
+                    <Route path="/goWhere" component={GoWhereCom} />
+                    <Route path="/withWho" component={WithWhoCom} />
+                    <Route path="/persons" component={PersonsCom} />
+                    <Route path="/my" component={MyCom} />
+            </div>
+            <nav class="mui-bar mui-bar-tab">
+                <Link className={["mui-tab-item", this.state.selectedTab=='go'?'mui-active':null].join(' ')}  to="/goWhere" onClick={this.navClickFun.bind(this,'go')}> 
+                    <span class="mui-icon mui-icon-home"></span>
+                    <span class="mui-tab-label">Go</span>
+                </Link>
+                <Link className={["mui-tab-item", this.state.selectedTab=='withWho'?'mui-active':null].join(' ')} to="/withWho" onClick={this.navClickFun.bind(this,'withWho')}>
+                    <span class="mui-icon mui-icon-email"></span>
+                    <span class="mui-tab-label">Who</span>
+                </Link>
+                <Link className={["mui-tab-item", this.state.selectedTab=='persons'?'mui-active':null].join(' ')} to="/persons" onClick={this.navClickFun.bind(this,'persons')}>
+                    <span class="mui-icon mui-icon-contact"></span>
+                    <span class="mui-tab-label">persons</span>
+                </Link>
+                <Link className={["mui-tab-item", this.state.selectedTab=='my'?'mui-active':null].join(' ')} to="/my" onClick={this.navClickFun.bind(this,'my')}>
+                    <span class="mui-icon mui-icon-gear"></span>
+                    <span class="mui-tab-label">my</span>
+                </Link>
+            </nav>
+        </Router>
     }
 }

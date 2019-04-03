@@ -1,55 +1,13 @@
-@font-face {
-  font-family: 'iconfont';
-  src: url('./iconfont.ttf') format('truetype')
-}
-.iconfont {
-  font-family: "iconfont" !important;
-  font-size: 30px;
-  font-style: normal;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-.icon-tag9:before {
-  content: "\e658";
-}
-
-.icon-xiaolian:before {
-  content: "\e600";
-}
-
-.icon-lanqiuchang:before {
-  content: "\e602";
-}
-
-.icon-zuqiuchang:before {
-  content: "\e609";
-}
-
-.icon-tuandui:before {
-  content: "\e646";
-}
-
-.icon-qiuchang:before {
-  content: "\e63f";
-}
-
-.icon-tubiaozhizuomoban:before {
-  content: "\e603";
-}
-
-.icon-qun:before {
-  content: "\e719";
-}
-
-.icon-qiuchang1:before {
-  content: "\e60a";
-}
-
-.icon-xiaolian1:before {
-  content: "\e66a";
-}
-
-.icon-tubiao-qiuchang:before {
-  content: "\e61b";
+body,ol,ul,h1,h2,h3,h4,h5,h6,p,th,td,dl,dd,form,fieldset,legend,input,textarea,select{margin:0;padding:0}
+body{font:12px"宋体","Arial Narrow",HELVETICA;background:#fff;-webkit-text-size-adjust:100%;}
+a{color:#2d374b;text-decoration:none}
+a:hover{color:#cd0200;text-decoration:underline}
+em{font-style:normal}
+li{list-style:none}
+img{border:0;vertical-align:middle}
+table{border-collapse:collapse;border-spacing:0}
+p{word-wrap:break-word}
+html,body{
+  height: 100%;
+  weight: 100%;
 }
