@@ -1,0 +1,19 @@
+.barTop .am-search{
+    background-color: #6aadf5;
+}
+.barTop .mui-icon{
+    font-size: 20px;
+    line-height: 2;
+}
+.go_content{
+    margin-top: 10px;
+    background-color: white;
+}
+.go_searchBar{
+    height: 50px;
+    background-color:pink;
+}
+.go_list{
+    background-color:blue;
+    height: 404px;
+}

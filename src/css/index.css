@@ -11,3 +11,14 @@ html,body{
   height: 100%;
   weight: 100%;
 }
+
+.barTop{
+    position: fixed;
+    z-index: 10;
+    right: 0;
+    left: 0;
+    height: 80px;
+    border-bottom: 0;
+    background-color: #6aadf5;
+    padding: 20px 10px
+}
