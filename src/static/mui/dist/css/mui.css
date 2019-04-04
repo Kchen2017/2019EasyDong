@@ -5018,23 +5018,17 @@ body > .mui-progressbar
 
     src: url('../fonts/mui.ttf') format('truetype')
 }
+@font-face {
+    font-family: Muiicons;
+    font-weight: normal;
+    font-style: normal;
+
+    src: url('../fonts/iconfont.ttf') format('truetype')
+}
 
 
 .mui-icon
 {
-    font-family: Muiicons;
-    font-size: 24px;
-    font-weight: normal;
-    font-style: normal;
-    line-height: 1;
-
-    display: inline-block;
-
-    text-decoration: none;
-
-    -webkit-font-smoothing: antialiased;
-}
-.iconfont {
     font-family: Muiicons;
     font-size: 24px;
     font-weight: normal;
