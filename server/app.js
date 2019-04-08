@@ -1,6 +1,6 @@
 var express = require("express")
 var request = require("request")
-
+var mysql = require('./baseData/mysql')
 
 var app = express()
 
@@ -14,6 +14,16 @@ app.use("*", (req, res, next)=>{
     // next()方法表示进入下一个路由
     next();
 })
+
+var goWhereApi = require('./api/goWhere')
+var myApi = require('./api/my')
+var withWhoApi = require('./api/withWho')
+
+app.use("/goWhere", goWhereApi)
+app.use("/my", myApi)
+app.use("/withWho", withWhoApi)
+
+
 
 app.get("/getMovieList", (req, res, next) => {
     var type = req.query.type;

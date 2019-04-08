@@ -98,6 +98,11 @@ export default class GoWhereCom extends Component {
           show: false,
         });
       }
+      getlist = () => {
+        fetch('http://127.0.0.1:3090/goWhere/list').then(function(res){
+          console.log(res)
+        })
+      }
 
     componentDidMount() {
         // simulate img loading
@@ -133,7 +138,7 @@ export default class GoWhereCom extends Component {
         }
         return <div style={{height: "100%"}}>
             <header class="barTop">
-                <a class="mui-action-back mui-icon icon-tubiao-qiuchang mui-pull-left">北京</a>
+                <a onClick={this.getlist} class="mui-action-back mui-icon icon-tubiao-qiuchang mui-pull-left">北京</a>
                 <SearchBar placeholder="Search" maxLength={8} />
             </header>
             <div>
