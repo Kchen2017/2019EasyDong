@@ -99,7 +99,7 @@ export default class GoWhereCom extends Component {
         });
       }
       getlist = () => {
-        fetch('http://127.0.0.1:3090/goWhere/list').then(function(res){
+        fetch('http://127.0.0.1:3090/goWhere/list?hh=1').then(function(res){
           console.log(res)
         })
       }
